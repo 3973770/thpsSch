@@ -96,8 +96,13 @@ open class thpsSchedulerItem {
     public var data:String?
     public var silent:Bool?
     
-    init() {
+    init (key:String,plan:thpsSchedulerPlan,ItemType:thpsSchedulerType = .system,silent:Bool = true){
         state = .stop
+        self.key = key
+        self.ItemType = ItemType
+        self.silent = silent
+        self.plan = plan
+        thpsScheduler.Add(item: self)
     }
     
     public func CheckStart()-> Bool{

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "thpslibs",
+        "repositoryURL": "https://github.com/3973770/thpslibs",
+        "state": {
+          "branch": null,
+          "revision": "5ddab5b2337b71d89402f1d3c89efc0ca36703fa",
+          "version": "0.1.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

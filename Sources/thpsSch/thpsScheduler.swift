@@ -88,7 +88,7 @@ public class thpsSchedulerPlan{
     }
 }
 
-public class thpsSchedulerItem {
+open class thpsSchedulerItem {
     public var key:String?
     public var state:thpsSchedulerState?
     public var plan:thpsSchedulerPlan?
@@ -179,7 +179,7 @@ public class thpsSchedulerItem {
         }
     }
     
-    public func Run() {
+    open func Run() {
         if(CheckStart()){
             if let _ = silent {
                 // do something
@@ -192,7 +192,7 @@ public class thpsSchedulerItem {
         }
     }
     
-    public func End() {
+    open func End() {
         self.state = thpsSchedulerState.stop
         if let plan = plan {
             plan.markrun()
@@ -202,7 +202,7 @@ public class thpsSchedulerItem {
         }
     }
     
-    public func Work(){
+    open func Work(){
         // place own code
     }
 }

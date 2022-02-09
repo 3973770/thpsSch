@@ -73,12 +73,12 @@ public class thpsSchedulerPlan{
     public var DayOfWeeks:[Int8]?
     public var lastrun:Date?
     
-    init(MomentPlanned:Date) {
+    public init(MomentPlanned:Date) {
         ItemType    = .planned
         MomentStart = MomentPlanned
     }
     
-    init(interval:UInt64){
+    public init(interval:UInt64){
         ItemType      = .period
         self.interval = interval
     }
@@ -96,7 +96,7 @@ open class thpsSchedulerItem {
     public var data:String?
     public var silent:Bool?
     
-    init (key:String,plan:thpsSchedulerPlan,ItemType:thpsSchedulerType = .system,silent:Bool = true){
+    public init (key:String,plan:thpsSchedulerPlan,ItemType:thpsSchedulerType = .system,silent:Bool = true){
         state = .stop
         self.key = key
         self.ItemType = ItemType

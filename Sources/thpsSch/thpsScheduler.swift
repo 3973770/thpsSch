@@ -8,7 +8,7 @@
 import Foundation
 import thpslibs
 
-public class Scheduler{
+public class thpsScheduler{
     private static let socketLockQueue = DispatchQueue(label: "com.thps.Scheduler")
     private static let sema = DispatchSemaphore(value: 1)
     private static var continueRunningValue = true
@@ -26,9 +26,9 @@ public class Scheduler{
             return res
         }
     }
-    private static var list:[String:SchedulerItem] = [:]
+    private static var list:[String:thpsSchedulerItem] = [:]
     
-    public static func Add(item:SchedulerItem){
+    public static func Add(item:thpsSchedulerItem){
         if !list.keys.contains(item.key!) {
             list[item.key!] = item
         }
@@ -88,7 +88,7 @@ public class thpsSchedulerPlan{
     }
 }
 
-public class SchedulerItem {
+public class thpsSchedulerItem {
     public var key:String?
     public var state:thpsSchedulerState?
     public var plan:thpsSchedulerPlan?
@@ -197,7 +197,7 @@ public class SchedulerItem {
         if let plan = plan {
             plan.markrun()
             if plan.ItemType == thpsSchedulerPlanType.planned{
-                Scheduler.Remove(key: self.key!)
+                thpsScheduler.Remove(key: self.key!)
             }
         }
     }

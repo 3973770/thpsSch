@@ -8,7 +8,7 @@
 import Foundation
 import thpslibs
 
-class Scheduler{
+public class Scheduler{
     private static let socketLockQueue = DispatchQueue(label: "com.thps.Scheduler")
     private static let sema = DispatchSemaphore(value: 1)
     private static var continueRunningValue = true
